@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "alwaysStrict": true,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "strictFunctionTypes": true,
+        "target": "ES6",
+        "module": "CommonJS",
+        "moduleResolution": "node"
+    }
+}
+
