@@ -1,2 +1,2 @@
-# Crawler
-node js Crawler
+# Node with typescript starter
+
