@@ -1,7 +1,5 @@
 const normalizeURL = (url: string): string => {
-    return url
-}
+    return url;
+};
 
-export {
-    normalizeURL
-}
+export { normalizeURL };

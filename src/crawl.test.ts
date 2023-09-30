@@ -1,15 +1,13 @@
 import 'jest';
-import { normalizeURL } from './crawl'
+import { normalizeURL } from './crawl';
 
 describe('normalizeURL', () => {
-    beforeEach(() => {
-        
-    });
+    beforeEach(() => {});
 
     it('should get the current environment', () => {
-        const input: string = ''
-        const actual: string = normalizeURL(input)
-        const expected: string = ''
+        const input: string = '';
+        const actual: string = normalizeURL(input);
+        const expected: string = '';
         expect(actual).toEqual(expected);
     });
 });
