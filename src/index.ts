@@ -1,17 +1,16 @@
 import { crawlPage } from './crawl';
-import { pagesType } from './crawl.type';
+import { objectPagesType } from './crawl.type';
+import { printReport } from './report';
 
-const main = async (baseURL: string) => {
-    if (baseURL.length < 0) {
+const main = async (baseURL?: string) => {
+    if (!baseURL || baseURL.length < 0) {
         console.error('no website provide');
         process.exit(1);
     }
 
     console.log(`strating crawl of ${baseURL}`);
-    const pages: pagesType = await crawlPage(baseURL, baseURL, {});
-    for (const page of Object.entries(pages)) {
-        console.log(page);
-    }
+    const pages: objectPagesType = await crawlPage(baseURL, baseURL, {});
+    printReport(pages);
 };
 
-main('https://wagslane.dev');
+main();

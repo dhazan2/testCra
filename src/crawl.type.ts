@@ -1,4 +1,5 @@
-type pagesType = { [x: string]: number };
-type crawlPageResponseType = Promise<pagesType>;
+type objectPagesType = { [x: string]: number };
+type arrayPagesType = [string, number][];
+type crawlPageResponseType = Promise<objectPagesType>;
 
-export { pagesType, crawlPageResponseType };
+export { objectPagesType, arrayPagesType, crawlPageResponseType };

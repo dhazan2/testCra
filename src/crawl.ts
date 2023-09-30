@@ -1,6 +1,6 @@
 import { URL } from 'url';
 import { JSDOM } from 'jsdom';
-import { pagesType, crawlPageResponseType } from './crawl.type';
+import { objectPagesType, crawlPageResponseType } from './crawl.type';
 
 const normalizeURL = (url: string): string => {
     const urlObj = new URL(url);
@@ -39,7 +39,7 @@ const getURLsFromHTML = (htmlBody: string, baseURL: string): string[] => {
 const crawlPage = async (
     baseURL: string,
     currentURL: string,
-    pages: pagesType
+    pages: objectPagesType
 ): crawlPageResponseType => {
     const baseURLObj = new URL(baseURL);
     const currentURLObj = new URL(currentURL);
