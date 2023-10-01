@@ -9,8 +9,12 @@ const main = async (baseURL?: string) => {
     }
 
     console.log(`strating crawl of ${baseURL}`);
-    const pages: objectPagesType = await crawlPage(baseURL, baseURL, {});
+
+    const pages: objectPagesType = await crawlPage(baseURL, baseURL, {
+        inner: {},
+        outer: {}
+    });
     printReport(pages);
 };
 
-main();
+main('https://wagslane.dev');

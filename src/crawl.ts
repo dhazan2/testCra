@@ -44,16 +44,22 @@ const crawlPage = async (
     const baseURLObj = new URL(baseURL);
     const currentURLObj = new URL(currentURL);
     if (baseURLObj.hostname !== currentURLObj.hostname) {
+        const outerNormalizeCurrentURL = normalizeURL(currentURL);
+        if (pages.outer[outerNormalizeCurrentURL] > 0) {
+            pages.outer[outerNormalizeCurrentURL]++;
+        } else {
+            pages.outer[outerNormalizeCurrentURL] = 1;
+        }
         return pages;
     }
 
-    const normalizeCurrentURL = normalizeURL(currentURL);
-    if (pages[normalizeCurrentURL] > 0) {
-        pages[normalizeCurrentURL]++;
+    const innerNormalizeCurrentURL = normalizeURL(currentURL);
+    if (pages.inner[innerNormalizeCurrentURL] > 0) {
+        pages.inner[innerNormalizeCurrentURL]++;
         return pages;
     }
 
-    pages[normalizeCurrentURL] = 1;
+    pages.inner[innerNormalizeCurrentURL] = 1;
     try {
         const resp = await fetch(currentURL);
         if (resp.status > 399) {
